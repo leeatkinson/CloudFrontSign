@@ -1,6 +1,6 @@
 {
   "name": "cloudfront-sign",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "An Amazon CloudFront URL signer",
   "author": "Lee Atkinson <lee@rocketindigo.com>",
   "license": "Apache 2.0",
@@ -9,12 +9,20 @@
   "bin": {
     "cfsign": "./bin/main.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leeatkinson/CloudFrontSign.git"
+  },
   "keywords": [
     "Amazon",
     "AWS",
     "CloudFront",
     "Signed URL"
   ],
+  "bugs": {
+    "url": "https://github.com/leeatkinson/CloudFrontSign/issues"
+  },
+  "homepage": "https://github.com/leeatkinson/CloudFrontSign",
   "dependencies": {
     "commander": "^2.3.0"
   }
