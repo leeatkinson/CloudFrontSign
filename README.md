@@ -1,7 +1,7 @@
 CloudFront Sign
 ===============
 
-A signer for CloudFront URLs, supporting canned and custom policies.
+An Amazon CloudFront URL signer, supporting canned and custom policies.
 
 Install
 -------
