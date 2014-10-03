@@ -2,18 +2,14 @@
 
 "use strict";
 
-var path = require("path");
-var fs = require("fs");
-
-var commander = require("commander");
-
-var libPath = path.join(path.dirname(fs.realpathSync(__filename)), "../lib/main.js");
-var lib = require(libPath);
-
-var packageJson = require("../package.json");
+var path = require("path"),
+	fs = require("fs"),
+	commander = require("commander"),
+	lib = require(path.join(path.dirname(fs.realpathSync(__filename)), "../lib/main.js")),
+	packageJson = require("../package.json");
 
 commander.description("CloudFront Sign").version(packageJson.version)
-	.usage('[options] <url>')
+	.usage("[options] <url>")
 	.option("-r, --resource [resource]", "Resource [URL]")
 	.option("-l, --date-less-than [date]", "Date & time until the signed URL is valid [5 mins from now]")
 	.option("-g, --date-greater-than [date]", "Date & time after the signed URL becomes valid")
