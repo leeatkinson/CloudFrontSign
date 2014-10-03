@@ -22,6 +22,11 @@ commander.description("CloudFront Sign").version(packageJson.version)
 	.parse(process.argv);
 
 console.log(commander.description() + " " + commander.version());
+var args = commander.args;
+if (args.length == 0) {
+	console.error("URL is missing");
+	commander.help();
+}
 var url = commander.args[0];
 
 fs.realpath(commander.privateKeyPath, function (err, path) {

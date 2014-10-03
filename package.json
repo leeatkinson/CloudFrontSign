@@ -1,6 +1,6 @@
 {
   "name": "cloudfront-sign",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "An Amazon CloudFront URL signer",
   "author": "Lee Atkinson <lee@rocketindigo.com>",
   "license": "Apache 2.0",
