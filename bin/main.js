@@ -13,12 +13,13 @@ var lib = require(libPath);
 var packageJson = require("../package.json");
 
 commander.description("CloudFront Sign").version(packageJson.version)
-	.option("-r --resource [resource]", "Resource. [Same as URL]")
-	.option("-l --date-less-than [date]", "Date less than. [5 mins from now]")
-	.option("-g --date-greater-than [date]", "Date greater than.")
-	.option("-a --ip-address [n.n.n.n/nn]", "IP Address in CIDR format.")
-	.option("-k --key-pair-id <key-pair-id>", "Key Pair ID.")
-	.option("-p --private-key-path <private-key-path>", "Private Key Path.")
+	.usage('[options] <url>')
+	.option("-r, --resource [resource]", "Resource [URL]")
+	.option("-l, --date-less-than [date]", "Date & time until the signed URL is valid [5 mins from now]")
+	.option("-g, --date-greater-than [date]", "Date & time after the signed URL becomes valid")
+	.option("-a, --ip-address [n.n.n.n/nn]", "Client's IP address (in CIDR format) for signed URL to be valid")
+	.option("-k, --key-pair-id <key-pair-id>", "CloudFront key pair ID")
+	.option("-p, --private-key-path <private-key-path>", "Private key path")
 	.parse(process.argv);
 
 console.log(commander.description() + " " + commander.version());
