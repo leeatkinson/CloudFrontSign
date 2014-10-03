@@ -28,15 +28,12 @@ if (args.length == 0) {
 	commander.help();
 }
 var url = commander.args[0];
-
-fs.realpath(commander.privateKeyPath, function (err, path) {
-	if (err) console.error(err)
-	else fs.readFile(path, function (err, data) {
-		if (err) console.error(err);
-		else {
-			var privateKey = data.toString();
-			var result = lib(url, commander.resource, commander.dateLessThan, commander.dateGreaterThan, commander.ipAddress, commander.keyPairId, privateKey);
-			console.log(JSON.stringify(result, null, "\t"));
-		}
-	});
+var path = fs.realpathSync(commander.privateKeyPath)
+fs.readFile(path, function (err, data) {
+	if (err) console.error(err);
+	else {
+		var privateKey = data.toString();
+		var result = lib(url, commander.resource, commander.dateLessThan, commander.dateGreaterThan, commander.ipAddress, commander.keyPairId, privateKey);
+		console.log(JSON.stringify(result, null, "\t"));
+	}
 });
