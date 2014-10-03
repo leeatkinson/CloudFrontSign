@@ -20,12 +20,12 @@ commander.description("CloudFront Sign").version(packageJson.version)
 
 console.log(commander.description() + " " + commander.version());
 var args = commander.args;
-if (args.length == 0) {
+if (args.length === 0) {
 	console.error("URL is missing");
 	commander.help();
 }
-var url = commander.args[0];
-var path = fs.realpathSync(commander.privateKeyPath)
+var url = args[0],
+	path = fs.realpathSync(commander.privateKeyPath);
 fs.readFile(path, function (err, data) {
 	if (err) console.error(err);
 	else {
